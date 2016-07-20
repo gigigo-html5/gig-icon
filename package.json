@@ -2,10 +2,19 @@
   "name": "gig-icon",
   "version": "0.0.1",
   "description": "Webcomponents to manage icon",
-  "main": "gruntfile.js",
+  "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "./node_modules/.bin/grunt release"
+    "test": "npm run lint-polymer",
+    "release": "gulp release",
+    "postinstall": "bower install",
+    "check-bower-deps": "ncu -m bower",
+    "check-npm-deps": "ncu",
+    "update-deps": "ncu -u && ncu -m bower -u",
+    "serve": "ws -p 3001",
+    "lint-polymer": "polylint --root src gig-icon.html",
+    "release:patch": "npm version patch --no-git-tag-version && git add package.json && git commit -m \"chore(npm): update npm version\" && bower version patch -m \"chore(release): Bump to %s\" && git push --tags",
+    "release:minor": "npm version minor --no-git-tag-version && git add package.json && git commit -m \"chore(npm): update npm version\" && bower version minor -m \"chore(release): Bump to %s\" && git push --tags",
+    "release:major": "npm version major --no-git-tag-version && git add package.json && git commit -m \"chore(npm): update npm version\" && bower version major -m \"chore(release): Bump to %s\" && git push --tags"
   },
   "repository": {
     "type": "git",
@@ -17,18 +26,15 @@
     "url": "https://github.com/gigigo-html5/gig-icon/issues"
   },
   "devDependencies": {
-    "bower": "*",
-    "grunt": ">=0.4.0",
-    "grunt-contrib-concat": "*",
-    "grunt-contrib-jshint": "*",
-    "grunt-conventional-changelog": "0.0.12",
-    "grunt-release": "~0.3.3",
-    "grunt-vulcanize": "^1.0.0",
-    "grunt-cli": "^0.1.13",
+    "bower": "^1.7.9",
+    "dateformat": "^1.0.12",
+    "gulp": "^3.9.1",
+    "gulp-header": "^1.8.7",
+    "gulp-replace": "^0.5.4",
+    "local-web-server": "^1.2.6",
+    "npm-check-updates": "^2.7.2",
+    "polylint": "^2.10.1",
     "karma": "~0.8.0"
   },
-  "homepage": "https://github.com/gigigo-html5/gig-icon",
-  "dependencies": {
-
-  }
+  "homepage": "https://github.com/gigigo-html5/gig-icon"
 }
