@@ -1,6 +1,6 @@
 {
   "name": "gig-icon",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Webcomponents to manage icon",
   "main": "gulpfile.js",
   "scripts": {
