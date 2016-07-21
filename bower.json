@@ -1,0 +1,28 @@
+{
+  "name": "gig-icon",
+  "version": "0.1.0",
+  "homepage": "https://github.com/gigigo-html5/gig-icon",
+  "authors": [
+    "Pedro Peña <pedro.jose@gigigo.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~1.6.0",
+    "iron-icons": "^1.1.3"
+  },
+  "devDependencies": {
+    "web-component-tester": "^4.3.1",
+    "iron-test-helpers": "^1.2.5",
+    "webcomponentsjs": "^0.7.22"
+  },
+  "resolutions": {
+    "polymer": "^1.6.0"
+  }
+}
